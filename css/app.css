@@ -38,11 +38,12 @@ img{max-width: 100%;height: auto;}
     z-index: 99;
     display: grid;
     /* padding: 1rem 2rem; */
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns:  25% 1fr 20%;
     justify-items: space-evenly;
     align-items: center;
     grid-template-areas: "Logo Form Perfil";
     border-bottom: 1px solid var(--gray);
+    box-shadow: 0px -10px 20px rgba(0,0,0,.4);
 }
 
 .Logo{
@@ -56,24 +57,47 @@ img{max-width: 100%;height: auto;}
     display: inline-block;
 }
 .Logo__text{
-    font-weight: bold;
     font-size: 2rem;
     margin-left: .5rem;
     display: inline-block;
     color: #FFFFFF;
-    -webkit-text-stroke: .7px var(--MainColor);
-
+    -webkit-text-stroke: 1px var(--MainColor);
 }
-
-
-
-
 
 /* Sidebar */
 .Sidebar{
     grid-area: Sidebar;
     overflow: scroll;
     background: var(--gradient);
+}
+
+.Form{
+    grid-area: Form;
+}
+
+.Form__input{
+    width: 100%;
+    padding: .7rem .5rem;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    color: var(--black);
+}
+
+
+.Form__input:focus{
+    border: 1px solid var(--MainColor);
+}
+
+.Perfil{
+    grid-area: Perfil;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Perfil__img{
+    border-radius: 50px;
+    margin-left: 20px;
 }
 
 
