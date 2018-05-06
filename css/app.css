@@ -11,6 +11,7 @@
     --MainColor: #fc535a;
     --black: #121212;
     --gray: #cdcdcd;
+    --white: #FFFFFF;
 }
 
 body{
@@ -20,7 +21,7 @@ img{max-width: 100%;height: auto;}
 /* Container */
 .Container{
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 10% 1fr;
     grid-template-areas: "Header Header" 
                         "Sidebar Main";
     grid-template-rows: 80px 1fr;
@@ -64,19 +65,12 @@ img{max-width: 100%;height: auto;}
     -webkit-text-stroke: 1px var(--MainColor);
 }
 
-/* Sidebar */
-.Sidebar{
-    grid-area: Sidebar;
-    overflow: scroll;
-    background: var(--gradient);
-}
-
 .Form{
     grid-area: Form;
 }
 
 .Form__input{
-    width: 100%;
+    width: 85%;
     padding: .7rem .5rem;
     border: 1px solid var(--gray);
     border-radius: 5px;
@@ -99,6 +93,48 @@ img{max-width: 100%;height: auto;}
     border-radius: 50px;
     margin-left: 20px;
 }
+
+
+/* Sidebar */
+.Sidebar{
+    grid-area: Sidebar;
+    background: var(--gradient);
+}
+
+.Nav{
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    padding: 3rem 0;
+    z-index: 2;
+}
+.Nav__list{
+    display: grid;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+}
+.Nav__item{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.Nav__link{
+    text-decoration: none;
+    color: var(--white);
+}
+.Nav__link .fa{
+    font-size: 2rem;
+    color: var(--white);
+}
+.Nav__text{
+    display: block;
+    font-size: .9rem;
+}
+
+
 
 
 /* Main */
