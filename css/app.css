@@ -115,7 +115,7 @@ img{max-width: 100%;height: auto;}
     margin: 0;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1.5rem;
+    padding: .5rem 1.5rem;
 }
 .Nav__item{
     text-align: center;
@@ -140,4 +140,125 @@ img{max-width: 100%;height: auto;}
 /* Main */
 .Main{
     grid-area: Main;
+    overflow: auto;
+    padding: 0 1rem;
+}
+
+.Films{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3,1fr);    
+}
+.Films__category__title{
+    color: #121212;
+}
+.Films__item{
+    position: relative;
+    color: var(--white);
+    overflow: hidden;
+    transition: .3s;
+}
+
+.Films__item__img{
+    width: 100%;
+    height: auto;
+}
+.Films__item__overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    background: rgba(253,103,102,.72);
+    padding: .5rem;
+    transition: .3s;
+    cursor: pointer;
+}
+.Films__item__overlay:hover{
+    height: 92.5%;
+}
+.Films__item__title{
+    font-weight: bold;
+    margin: 0 0 0 .5rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1100px){
+    .Nav__list{padding: .5rem 1rem;}
+    .Nav__link .fa{font-size: 1.6rem;}
+    .Films__item__title{font-size: 1.1rem;}
+    .Films__item__description{font-size: .8rem;}
+}
+
+@media screen and (max-width: 968px){
+    .Header{padding: 0 2rem 0 0;}
+    .Nav__list{padding: .5rem .6rem;}
+    .Nav__text{font-size: .8rem;}
+    .Nav__link .fa{font-size: 1.3rem;}
+    .Films{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .Header{
+        padding: 0 2rem 0 0;
+    }
+    .Logo{
+        justify-content: flex-end;
+    }
+    .Logo img{display: none;}
+    .Logo__text{font-size: 1.5rem;}
+    .Nav__list{padding: .5rem .2rem;}
+    .Form__input{font-size: .9rem;}
+}
+
+@media screen and (max-width: 624px){
+    .Container{
+        grid-template-rows: 200px 1fr;
+    }
+    .Header{
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: "Logo" "Perfil" "Form";
+        /* justify-items: center; */
+    }
+    .Logo{
+        justify-content: center;
+    }
+    .Form{
+        text-align: center;
+    }
+    .Logo img{
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+    .Films{
+        grid-template-columns: 1fr;
+    }
+    .Films__item__title{font-size: 1.5rem;}
+    .Films__item__description{font-size: 1rem;}
+    .Films__item__overlay{height: 30%;}
+    .Films__item__overlay:hover{height: 95%;}
+    
+}
+
+@media screen and (max-width: 466px){
+    .Nav__text{
+        display: none;
+    }
+    .Nav__list{
+        padding: .5rem .6rem;
+    }
+}
+@media screen and (max-width: 366px){
+    .Container{
+        grid-template-rows: 200px 1fr;
+        grid-template-areas: "Header Header" 
+                        "Main Main";
+    }
+    .Nav{
+        display: none;
+    }
 }
